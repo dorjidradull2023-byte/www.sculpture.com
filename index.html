@@ -4,187 +4,207 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Royal Academy | Contemporary Sculpture</title>
+   <link rel="stylesheet" href="style.css">
 </head>
+<body>
 
-<body style="background-color: #000000; color: #ffffff; font-family: sans-serif; margin: 0;">
 
-   <header style="background-color: #1a1a1a; padding: 20px; border-bottom: 1px solid #333;">
-       <div style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto;">
-           <div>
-               <h2 style="margin: 0; color: white;">The Royal Academy</h2>
+   <header class="header">
+       <div class="nav">
+           <div class="nav-brand">
+               <h2>The Royal Academy</h2>
            </div>
-           <ul style="list-style: none; display: flex; gap: 20px; padding: 0; margin: 0;">
-               <li><a href="#" onclick="switchPage('home'); return false;" style="color: #cccccc; text-decoration: none;">Home</a></li>
-               <li><a href="#" onclick="switchPage('about'); return false;" style="color: #cccccc; text-decoration: none;">About</a></li>
-               <li><a href="#" onclick="switchPage('aboutme'); return false;" style="color: #cccccc; text-decoration: none;">About Me</a></li>
-               <li><a href="#" onclick="switchPage('gallery'); return false;" style="color: #cccccc; text-decoration: none;">Gallery</a></li>
+           <ul class="nav-menu">
+               <li><a href="#" id="link-home" onclick="switchPage('home')">Home</a></li>
+               <li><a href="#" id="link-about" onclick="switchPage('about')">About</a></li>
+               <li><a href="#" id="link-aboutme" onclick="switchPage('aboutme')">About Me</a></li>
+               <li><a href="#" id="link-gallery" onclick="switchPage('gallery')">Gallery</a></li>
            </ul>
        </div>
    </header>
 
-   <section id="home" style="display: block; padding: 40px 20px; max-width: 1200px; margin: 0 auto;">
-       <div style="display: flex; align-items: center; gap: 50px; flex-wrap: wrap;">
-           <div style="flex: 1; min-width: 300px;">
-               <p style="color: #d4af37; font-weight: bold; letter-spacing: 2px;">ELEGANCE IN FORM</p>
-               <h1 style="font-size: 3rem; margin: 10px 0;">The Collection From The<br> Royal Academy</h1>
-               <p style="color: #aaaaaa; line-height: 1.6;">Where traditional craftsmanship meets contemporary vision. Explore our collection of Sculpture done by the student of the Royal Academy.</p>
-               <a href="#" onclick="switchPage('gallery'); return false;" style="display: inline-block; padding: 12px 24px; background-color: #d4af37; color: black; text-decoration: none; font-weight: bold; margin-top: 10px;">View Collection</a>
+
+   <section id="home" class="active-section">
+       <div class="hero-layout">
+           <div class="hero-content">
+               <p>ELEGANCE IN FORM</p>
+               <h1>The Collection From The<br> Royal Academy</h1>
+               <p>Where traditional craftsmanship meets contemporary vision. Explore our collection of Sculpture done by the student of the Royal Academy.</p>
+               <a href="#" onclick="switchPage('gallery')" class="btn">View Collection</a>
            </div>
-           <div style="flex: 1; min-width: 300px;">
-               <img src="images/hero.jpg" style="width: 100%; border-radius: 10px;" alt="Hero Image">
-           </div>
+           <div class="hero-visual" style="background-image: url('images/hero.jpg');"></div>
        </div>
    </section>
 
-   <section id="about" style="display: none; padding: 40px 20px; max-width: 1200px; margin: 0 auto;">
-       <h2 style="border-bottom: 1px solid #333; padding-bottom: 10px; color: #d4af37;">Background History</h2>
-       <div style="display: flex; gap: 40px; flex-wrap: wrap;">
-           <div style="flex: 1; min-width: 300px;">
-               <p style="border-left: 3px solid #d4af37; padding-left: 15px; font-size: 1.2rem; color: #eeeeee;">
-                   The Aesthetics curriculum in the Bhutan Baccalaureate nurtures an appreciation of interconnectedness and nature. It builds an aesthetic mindset through diverse art forms to support a just and harmonious society.
-               </p>
-               <p style="color: #999999;">
-                   The Aesthetics curriculum in the Bhutan Baccalaureate uses interdisciplinary learning, project-based activities, community engagement, and cultural exploration for experiential and reflective education.
-               </p>
-               <p style="margin-top: 20px; color: #999999;">
-                   <strong>Our Mission:</strong> To nurture an aesthetic mindset that fosters appreciation of nature and interconnectedness, inspiring learners to help build a just and harmonious society.
-               </p>
 
-               <div style="display: flex; gap: 50px; margin-top: 30px; border-top: 1px solid #333; padding-top: 20px;">
-                   <div>
-                       <h3 style="color: #d4af37; margin: 0; font-size: 1.5rem;">150+</h3>
-                       <p style="margin: 0; color: #777;">Products</p>
-                   </div>
-                   <div>
-                       <h3 style="color: #d4af37; margin: 0; font-size: 1.5rem;">3 Years+</h3>
-                       <p style="margin: 0; color: #777;">Experience</p>
+   <section id="about">
+       <div class="container">
+           <h2 class="section-title">Background History</h2>
+           <div class="about-grid">
+               <div class="about-text">
+                   <p class="lead-text" style="border-color: #555; color: #e0e0e0;">
+                       The Aesthetics curriculum in the Bhutan Baccalaureate nurtures an appreciation of interconnectedness and nature. It builds an aesthetic mindset through diverse art forms to support a just and harmonious society.
+                   </p>
+                   <p class="muted-text">
+                       The Aesthetics curriculum in the Bhutan Baccalaureate uses interdisciplinary learning, project-based activities, community engagement, and cultural exploration for experiential and reflective education.
+                   </p>
+
+
+                   <p class="muted-text" style="margin-top: 15px;">
+                       <strong>Our Mission:</strong> To nurture an aesthetic mindset that fosters appreciation of nature and interconnectedness, inspiring learners to help build a just and harmonious society.
+                   </p>
+
+
+                   <div class="signature-box">
+                       <div class="stat">
+                           <h3>150+</h3>
+                           <p>Products</p>
+                       </div>
+                       <div class="stat">
+                           <h3>3 Years+</h3>
+                           <p>Experience</p>
+                       </div>
                    </div>
                </div>
-           </div>
-           <div style="flex: 1; min-width: 300px;">
-               <img src="images/dzong%202.jpeg" style="width: 100%; border-radius: 10px;" alt="Dzong">
+
+
+               <div class="about-img" style="background-image: url('images/dzong\ 2.jpeg');"></div>
            </div>
        </div>
    </section>
 
-   <section id="aboutme" style="display: none; padding: 40px 20px; max-width: 1200px; margin: 0 auto;">
-       <h2 style="border-bottom: 1px solid #333; padding-bottom: 10px; color: #d4af37;">About Me</h2>
-       <div style="display: flex; gap: 40px; flex-wrap: wrap;">
-           <div style="flex: 1; min-width: 300px;">
-               <img src="images/img.jpeg" style="width: 100%; border-radius: 10px;" alt="My Photo">
-           </div>
-          
-           <div style="flex: 1; min-width: 300px;">
-               <p style="border-left: 3px solid #d4af37; padding-left: 15px; font-size: 1.2rem; color: #eeeeee;">
-                   "Strength grows in the moments when you refuse to give up, turning every setback into a step forward."
-               </p>
-               <p style="color: #999999;">
-                   My name is <strong>Dorji Dradull</strong>. I am from Bhutan, and I enjoy sculpting during my free time. It is one of my favorite hobbies that allows me to express my creativity and relax
-               </p>
-               <p style="color: #999999; margin-top: 15px;">
-                    Practice simple shapes to train your hands, study real objects to learn proportion, and sculpt often so your technique grows naturally. Add quick sketches in between to sharpen your eye and keep improving steadily.
-               </p>
+
+   <section id="aboutme">
+       <div class="container">
+           <h2 class="section-title">About Me</h2>
+           <div class="about-grid">
+               <div class="about-img" style="background-image: url('images/img.jpeg'); order: 2;"></div>
               
-               <div style="display: flex; gap: 50px; margin-top: 30px; border-top: 1px solid #333; padding-top: 20px;">
-                   <div>
-                       <h3 style="color: #d4af37; margin: 0; font-size: 1.5rem;">10+</h3>
-                       <p style="margin: 0; color: #777;">Groups Works</p>
-                   </div>
-                   <div>
-                       <h3 style="color: #d4af37; margin: 0; font-size: 1.5rem;">Bhutanese</h3>
-                       <p style="margin: 0; color: #777;">Energetic Learner</p>
+               <div class="about-text" style="order: 1;">
+                   <p class="lead-text">
+                       "Strength grows in the moments when you refuse to give up, turning every setback into a step forward."
+                   </p>
+                   <p class="muted-text">
+                       My name is <strong>Dorji Dradull</strong>. I am from Bhutan, and I enjoy sculpting during my free time. It is one of my favorite hobbies that allows me to express my creativity and relax
+                   </p>
+                   <p class="muted-text" style="margin-top: 15px;">
+
+
+Practice simple shapes to train your hands, study real objects to learn proportion, and sculpt often so your technique grows naturally. Add quick sketches in between to sharpen your eye and keep improving steadily.
+                   </p>
+                  
+                   <div class="signature-box">
+                       <div class="stat">
+                           <h3>10+</h3>
+                           <p>Groups Works</p>
+                       </div>
+                       <div class="stat">
+                           <h3>Bhutanese</h3>
+                           <p>Energetic Learner</p>
+                       </div>
                    </div>
                </div>
            </div>
        </div>
    </section>
 
-   <section id="gallery" style="display: none; padding: 40px 20px; max-width: 1200px; margin: 0 auto;">
-       <h2 style="border-bottom: 1px solid #333; padding-bottom: 10px; color: #d4af37;">Work done by students</h2>
-       
-       <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
-           
-           <div style="background-color: #1a1a1a; padding: 10px; border-radius: 8px; width: 300px;">
-               <img src="images/img1.jpg" style="width: 100%; height: 250px; object-fit: cover; border-radius: 4px;">
-               <div style="padding: 10px;">
-                   <h3 style="color: white; margin: 5px 0;">Traditional bell with Khorlo</h3>
-                   <p style="color: #999; margin: 0;">Dorji Dradull and Rigden Nima</p>
+
+   <section id="gallery">
+       <div class="container">
+           <h2 class="section-title">Work done by students</h2>
+           <div class="gallery-grid">
+               <div class="gallery-card">
+                   <img src="images/img1.jpg" >
+                   <div class="gallery-overlay">
+                       <h3>Traditional bell with Khorlo</h3>
+                       <p>Dorji Dradull and Rigden Nima</p>
+                   </div>
+               </div>
+
+
+               <div class="gallery-card">
+                   <img src="images/img2.jpg" >
+                   <div class="gallery-overlay">
+                       <h3>Elephant with jewel</h3>
+                       <p> Tency Dorji and Thukten Dorji</p>
+                   </div>
+               </div>
+
+
+               <div class="gallery-card">
+                   <img src="images/img3.jpg" >
+                   <div class="gallery-overlay">
+                       <h3>Buddha Shakyamuni</h3>
+                       <p>Rigden Nima</p>
+                   </div>
+               </div>
+
+
+               <div class="gallery-card">
+                   <img src="images/img4.jpg" >
+                   <div class="gallery-overlay">
+                       <h3>Sculpted conch</h3>
+                       <p>Chhimi Dorji</p>
+                   </div>
+               </div>
+
+
+               <div class="gallery-card">
+                   <img src="images/img5.jpg" >
+                   <div class="gallery-overlay">
+                       <h3>Traditional wooden bowl</h3>
+                       <p>Dorji Dradull</p>
+                   </div>
+               </div>
+
+
+               <div class="gallery-card">
+                   <img src="images/img7.jpg" >
+                   <div class="gallery-overlay">
+                       <h3>Ealephant and laughing Buddha</h3>
+                       <p>Chhimi Dorji and Palden Gadhen Nima</p>
+                   </div>
                </div>
            </div>
-
-           <div style="background-color: #1a1a1a; padding: 10px; border-radius: 8px; width: 300px;">
-               <img src="images/img2.jpg" style="width: 100%; height: 250px; object-fit: cover; border-radius: 4px;">
-               <div style="padding: 10px;">
-                   <h3 style="color: white; margin: 5px 0;">Elephant with jewel</h3>
-                   <p style="color: #999; margin: 0;">Tency Dorji and Thukten Dorji</p>
-               </div>
-           </div>
-
-           <div style="background-color: #1a1a1a; padding: 10px; border-radius: 8px; width: 300px;">
-               <img src="images/img3.jpg" style="width: 100%; height: 250px; object-fit: cover; border-radius: 4px;">
-               <div style="padding: 10px;">
-                   <h3 style="color: white; margin: 5px 0;">Buddha Shakyamuni</h3>
-                   <p style="color: #999; margin: 0;">Rigden Nima</p>
-               </div>
-           </div>
-
-           <div style="background-color: #1a1a1a; padding: 10px; border-radius: 8px; width: 300px;">
-               <img src="images/img4.jpg" style="width: 100%; height: 250px; object-fit: cover; border-radius: 4px;">
-               <div style="padding: 10px;">
-                   <h3 style="color: white; margin: 5px 0;">Sculpted conch</h3>
-                   <p style="color: #999; margin: 0;">Chhimi Dorji</p>
-               </div>
-           </div>
-
-           <div style="background-color: #1a1a1a; padding: 10px; border-radius: 8px; width: 300px;">
-               <img src="images/img5.jpg" style="width: 100%; height: 250px; object-fit: cover; border-radius: 4px;">
-               <div style="padding: 10px;">
-                   <h3 style="color: white; margin: 5px 0;">Traditional wooden bowl</h3>
-                   <p style="color: #999; margin: 0;">Dorji Dradull</p>
-               </div>
-           </div>
-
-           <div style="background-color: #1a1a1a; padding: 10px; border-radius: 8px; width: 300px;">
-               <img src="images/img7.jpg" style="width: 100%; height: 250px; object-fit: cover; border-radius: 4px;">
-               <div style="padding: 10px;">
-                   <h3 style="color: white; margin: 5px 0;">Elephant and laughing Buddha</h3>
-                   <p style="color: #999; margin: 0;">Chhimi Dorji and Palden Gadhen Nima</p>
-               </div>
-           </div>
-
        </div>
    </section>
 
-   <footer style="text-align: center; padding: 20px; color: #666; border-top: 1px solid #333; margin-top: 50px;">
+
+   <footer>
        <p>&copy; 2025 Royal Academy of Sculpture. All Rights Reserved.</p>
    </footer>
 
+
    <script>
-       // This script handles the switching because we don't have a stylesheet
-       function switchPage(pageId) {
-           // 1. Get all sections
-           const sections = document.querySelectorAll('section');
-           
-           // 2. Hide all sections directly using Inline JS Styles
-           sections.forEach(section => {
-               section.style.display = 'none';
-           });
-
-           // 3. Show the target section
-           const targetSection = document.getElementById(pageId);
-           if (targetSection) {
-               targetSection.style.display = 'block';
-           }
-
-           // 4. Scroll to top
-           window.scrollTo(0, 0);
-       }
-
-       // Initialize Home page on load
        document.addEventListener('DOMContentLoaded', () => {
            switchPage('home');
        });
+
+
+       function switchPage(pageId) {
+           const sections = document.querySelectorAll('section');
+           sections.forEach(section => section.classList.remove('active-section'));
+
+
+           const targetSection = document.getElementById(pageId);
+           if (targetSection) targetSection.classList.add('active-section');
+
+
+           const navLinks = document.querySelectorAll('.nav-menu a');
+           navLinks.forEach(link => link.classList.remove('active-link'));
+
+
+           const activeLink = document.getElementById('link-' + pageId);
+           if (activeLink) activeLink.classList.add('active-link');
+
+
+           window.scrollTo(0, 0);
+       }
    </script>
+
 
 </body>
 </html>
+
+
+
