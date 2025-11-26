@@ -7,29 +7,85 @@
     <link rel="stylesheet" href="style.css"> 
     
     <style>
-        /* BASIC STYLING TO MAKE THE NAVIGATION WORK */
-        body { font-family: sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; }
+        /* --- DARK THEME STYLING --- */
         
-        /* This is crucial for your JavaScript to work */
-        section { display: none; padding: 20px; }
-        section.active-section { display: block; }
+        body { 
+            /* "Not too black" background (Dark Charcoal) */
+            background-color: #1a1a1a; 
+            /* Light text color for readability */
+            color: #e0e0e0; 
+            font-family: sans-serif; 
+            margin: 0; 
+            padding: 0; 
+        }
         
-        /* Basic Header Styling */
-        .header { background: #333; color: black; padding: 1rem; }
+        /* Navigation & Header - Slightly darker than body */
+        .header { 
+            background: #0f0f0f; 
+            border-bottom: 1px solid #333;
+            padding: 1rem; 
+        }
         .nav { display: flex; justify-content: space-between; align-items: center; }
+        .nav-brand h2 { margin: 0; color: #fff; }
         .nav-menu { list-style: none; display: flex; gap: 20px; }
-        .nav-menu a { color: white; text-decoration: none; }
+        .nav-menu a { color: #ccc; text-decoration: none; transition: color 0.3s; }
+        .nav-menu a:hover { color: #fff; }
         .nav-menu a.active-link { text-decoration: underline; color: #ffd700; }
 
-        /* Gallery Grid Styling */
-        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-        .gallery-card { background: white; padding: 10px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        .gallery-card img { width: 100%; height: 300px; object-fit: cover; border-radius: 4px; }
-        
-        /* Hero and About Styling placeholders */
-        .hero-visual, .about-img { height: 300px; background-size: cover; background-position: center; border-radius: 8px; margin: 10px 0; }
+        /* Section Handling */
+        section { display: none; padding: 40px 20px; }
+        section.active-section { display: block; }
         .container { max-width: 1200px; margin: 0 auto; }
-        .btn { display: inline-block; padding: 10px 20px; background: #333; color: white; text-decoration: none; margin-top: 10px; }
+
+        /* Hero Section */
+        .hero-layout { display: flex; flex-wrap: wrap; align-items: center; gap: 40px; }
+        .hero-content { flex: 1; min-width: 300px; }
+        .hero-content h1 { font-size: 3rem; margin: 10px 0; color: #fff; }
+        .hero-content p { color: #aaa; line-height: 1.6; }
+        .hero-visual { flex: 1; height: 400px; background-size: cover; background-position: center; border-radius: 8px; min-width: 300px; }
+
+        /* Buttons */
+        .btn { 
+            display: inline-block; 
+            padding: 12px 24px; 
+            background: #ffd700; /* Gold button pops on black */
+            color: #000; 
+            font-weight: bold;
+            text-decoration: none; 
+            margin-top: 20px; 
+            border-radius: 4px;
+        }
+        .btn:hover { background: #ffcc00; }
+
+        /* About Grid */
+        .about-grid { display: flex; flex-wrap: wrap; gap: 40px; margin-top: 20px; }
+        .about-text { flex: 1; min-width: 300px; }
+        .about-img { flex: 1; min-width: 300px; height: 400px; background-size: cover; background-position: center; border-radius: 8px; }
+        
+        .section-title { font-size: 2rem; border-bottom: 2px solid #333; padding-bottom: 10px; margin-bottom: 20px; color: #fff; }
+        .lead-text { font-size: 1.2rem; border-left: 3px solid #ffd700; padding-left: 15px; color: #ddd; margin-bottom: 20px; }
+        .muted-text { color: #bbb; line-height: 1.6; }
+
+        .signature-box { display: flex; gap: 40px; margin-top: 30px; border-top: 1px solid #333; padding-top: 20px; }
+        .stat h3 { margin: 0; color: #ffd700; font-size: 1.5rem; }
+        .stat p { margin: 5px 0 0; color: #888; font-size: 0.9rem; }
+
+        /* Gallery Cards - Dark Grey to stand out from background */
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .gallery-card { 
+            background: #2a2a2a; /* Lighter than body background */
+            padding: 15px; 
+            border-radius: 8px; 
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3); 
+            transition: transform 0.2s;
+        }
+        .gallery-card:hover { transform: translateY(-5px); }
+        .gallery-card img { width: 100%; height: 250px; object-fit: cover; border-radius: 4px; }
+        .gallery-overlay h3 { color: #fff; margin-bottom: 5px; font-size: 1.1rem; }
+        .gallery-overlay p { color: #aaa; margin: 0; font-size: 0.9rem; }
+
+        /* Footer */
+        footer { text-align: center; padding: 20px; color: #666; font-size: 0.9rem; margin-top: 40px; border-top: 1px solid #333; }
     </style>
 </head>
 <body>
@@ -49,14 +105,16 @@
     </header>
 
     <section id="home" class="active-section">
-        <div class="hero-layout">
-            <div class="hero-content">
-                <p>ELEGANCE IN FORM</p>
-                <h1>The Collection From The<br> Royal Academy</h1>
-                <p>Where traditional craftsmanship meets contemporary vision. Explore our collection of Sculpture done by the student of the Royal Academy.</p>
-                <a href="#" onclick="switchPage('gallery'); return false;" class="btn">View Collection</a>
+        <div class="container">
+            <div class="hero-layout">
+                <div class="hero-content">
+                    <p style="color: #ffd700; letter-spacing: 2px;">ELEGANCE IN FORM</p>
+                    <h1>The Collection From The<br> Royal Academy</h1>
+                    <p>Where traditional craftsmanship meets contemporary vision. Explore our collection of Sculpture done by the student of the Royal Academy.</p>
+                    <a href="#" onclick="switchPage('gallery'); return false;" class="btn">View Collection</a>
+                </div>
+                <div class="hero-visual" style="background-image: url('images/hero.jpg');"></div>
             </div>
-            <div class="hero-visual" style="background-image: url('images/hero.jpg');"></div>
         </div>
     </section>
 
@@ -65,8 +123,8 @@
             <h2 class="section-title">Background History</h2>
             <div class="about-grid">
                 <div class="about-text">
-                    <p class="lead-text" style="border-left: 3px solid #555; padding-left: 10px; color: #555;">
-                        The Aesthetics curriculum in the Bhutan Baccalaureate nurtures an appreciation of interconnectedness and nature. It builds an aesthetic mindset through diverse art forms to support a just and harmonious society.
+                    <p class="lead-text">
+                        The Aesthetics curriculum in the Bhutan Baccalaureate nurtures an appreciation of interconnectedness and nature. It builds an aesthetic mindset through diverse art forms.
                     </p>
                     <p class="muted-text">
                         The Aesthetics curriculum in the Bhutan Baccalaureate uses interdisciplinary learning, project-based activities, community engagement, and cultural exploration for experiential and reflective education.
@@ -107,7 +165,7 @@
                         My name is <strong>Dorji Dradull</strong>. I am from Bhutan, and I enjoy sculpting during my free time. It is one of my favorite hobbies that allows me to express my creativity and relax.
                     </p>
                     <p class="muted-text" style="margin-top: 15px;">
-                        Practice simple shapes to train your hands, study real objects to learn proportion, and sculpt often so your technique grows naturally. Add quick sketches in between to sharpen your eye and keep improving steadily.
+                        Practice simple shapes to train your hands, study real objects to learn proportion, and sculpt often so your technique grows naturally. Add quick sketches in between to sharpen your eye.
                     </p>
                    
                     <div class="signature-box">
@@ -131,7 +189,7 @@
             <div class="gallery-grid">
                 
                 <div class="gallery-card">
-                    <img src="https://drive.google.com/uc?export=view&id=1sO-LYqKdBfd8aYCz2iVyF6sNjscLCd6p" alt="Traditional bell with Khorlo">
+                    <img src="https://drive.google.com/uc?export=view&id=1sO-LYqKdBfd8aYCz2iVyF6sNjscLCd6p" alt="Traditional bell">
                     <div class="gallery-overlay">
                         <h3>Traditional bell with Khorlo</h3>
                         <p>Dorji Dradull and Rigden Nima</p>
@@ -139,7 +197,7 @@
                 </div>
 
                 <div class="gallery-card">
-                    <img src="https://drive.google.com/uc?export=view&id=17Dhm-RJ2zcNGqa3tDWjnNLVC3G95ZtMv" alt="Elephant with jewel">
+                    <img src="https://drive.google.com/uc?export=view&id=17Dhm-RJ2zcNGqa3tDWjnNLVC3G95ZtMv" alt="Elephant">
                     <div class="gallery-overlay">
                         <h3>Elephant with jewel</h3>
                         <p>Tency Dorji and Thukten Dorji</p>
@@ -147,7 +205,7 @@
                 </div>
 
                 <div class="gallery-card">
-                    <img src="https://drive.google.com/uc?export=view&id=1XsE-gsrVkwjJkDPlXQlgfO9MUDa2RkM5" alt="Buddha Shakyamuni">
+                    <img src="https://drive.google.com/uc?export=view&id=1XsE-gsrVkwjJkDPlXQlgfO9MUDa2RkM5" alt="Buddha">
                     <div class="gallery-overlay">
                         <h3>Buddha Shakyamuni</h3>
                         <p>Rigden Nima</p>
@@ -155,7 +213,7 @@
                 </div>
 
                 <div class="gallery-card">
-                    <img src="https://drive.google.com/uc?export=view&id=1-w7r_xALL4eqzjSm7B4ef84SPiGFBS9_" alt="Sculpted conch">
+                    <img src="https://drive.google.com/uc?export=view&id=1-w7r_xALL4eqzjSm7B4ef84SPiGFBS9_" alt="Conch">
                     <div class="gallery-overlay">
                         <h3>Sculpted conch</h3>
                         <p>Chhimi Dorji</p>
@@ -163,7 +221,7 @@
                 </div>
 
                 <div class="gallery-card">
-                    <img src="https://drive.google.com/uc?export=view&id=1a2vsdQ4mJlKeuFgKREGQ88kF-QhlkeJG" alt="Traditional wooden bowl">
+                    <img src="https://drive.google.com/uc?export=view&id=1a2vsdQ4mJlKeuFgKREGQ88kF-QhlkeJG" alt="Bowl">
                     <div class="gallery-overlay">
                         <h3>Traditional wooden bowl</h3>
                         <p>Dorji Dradull</p>
@@ -171,7 +229,7 @@
                 </div>
 
                 <div class="gallery-card">
-                    <img src="https://drive.google.com/uc?export=view&id=1Ma4TFmSHBu_cv2I3WMwAn8mTQ1vEj5gV" alt="Elephant and laughing Buddha">
+                    <img src="https://drive.google.com/uc?export=view&id=1Ma4TFmSHBu_cv2I3WMwAn8mTQ1vEj5gV" alt="Elephant and Buddha">
                     <div class="gallery-overlay">
                         <h3>Elephant and laughing Buddha</h3>
                         <p>Chhimi Dorji and Palden Gadhen Nima</p>
@@ -192,15 +250,12 @@
         });
 
         function switchPage(pageId) {
-            // Remove active class from all sections
             const sections = document.querySelectorAll('section');
             sections.forEach(section => section.classList.remove('active-section'));
 
-            // Add active class to target section
             const targetSection = document.getElementById(pageId);
             if (targetSection) targetSection.classList.add('active-section');
 
-            // Handle Navigation Link Active State
             const navLinks = document.querySelectorAll('.nav-menu a');
             navLinks.forEach(link => link.classList.remove('active-link'));
 
