@@ -5,95 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Royal Academy | Contemporary Sculpture</title>
     <link rel="stylesheet" href="style.css">
-
-    <style>
-        /* ===================== */
-        /*    NAVIGATION FIXED   */
-        /* ===================== */
-        .nav {
-            background: #000 !important;
-            color: #fff !important;
-            display: flex !important;
-            justify-content: space-between !important;
-            align-items: center !important;
-            padding: 20px 40px !important;
-            position: fixed !important;
-            top: 0;
-            left: 0;
-            width: 100% !important;
-            z-index: 1000 !important;
-        }
-
-        .nav-brand h2 {
-            color: #fff !important;
-            margin: 0;
-        }
-
-        /* Navigation menu spacing */
-        .nav-menu {
-            list-style: none !important;
-            display: flex !important;
-            gap: 40px !important;            /* spacing between items */
-            margin: 0 !important;
-            padding: 0 !important;
-        }
-
-        .nav-menu a {
-            color: #fff !important;
-            text-decoration: none !important;
-            font-size: 18px !important;
-            padding: 6px 10px !important;
-            cursor: pointer;
-        }
-
-        .nav-menu a:hover {
-            color: #ffcc00 !important;
-        }
-
-        .nav-menu a.active-link {
-            font-weight: bold !important;
-            border-bottom: 2px solid white !important;
-        }
-
-        /* Prevent content hiding under navbar */
-        body {
-            padding-top: 110px !important;
-            font-family: sans-serif;
-        }
-
-        /* =================================== */
-        /* SHOW/HIDE SECTIONS (NAV BEHAVIOR)   */
-        /* =================================== */
-        section {
-            display: none;
-        }
-
-        section.active-section {
-            display: block;
-            animation: fadeIn 0.5s;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        /* Fix gallery spacing */
-        .gallery-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px !important;
-        }
-
-        .gallery-card {
-            width: 300px;
-            border: 1px solid #ccc;
-            padding: 10px;
-        }
-
-    </style>
-
 </head>
+
 <body>
 
     <header class="header">
@@ -102,148 +15,85 @@
                 <h2>The Royal Academy</h2>
             </div>
             <ul class="nav-menu">
-                <li><a id="link-home" onclick="switchPage('home')">Home</a></li>
-                <li><a id="link-about" onclick="switchPage('about')">About</a></li>
-                <li><a id="link-aboutme" onclick="switchPage('aboutme')">About Me</a></li>
-                <li><a id="link-gallery" onclick="switchPage('gallery')">Gallery</a></li>
+                <li><a id="link-home" onclick="switchPage('home')">HOME</a></li>
+                <li><a id="link-about" onclick="switchPage('about')">ABOUT</a></li>
+                <li><a id="link-aboutme" onclick="switchPage('aboutme')">ABOUT ME</a></li>
+                <li><a id="link-gallery" onclick="switchPage('gallery')">GALLERY</a></li>
             </ul>
         </div>
     </header>
 
     <!-- HOME -->
     <section id="home" class="active-section">
-        <div class="hero-layout">
-            <div class="hero-content">
-                <p>ELEGANCE IN FORM</p>
-                <h1>The Collection From The<br> Royal Academy</h1>
-                <p>Where traditional craftsmanship meets contemporary vision. Explore our collection of Sculpture done by the student of the Royal Academy.</p>
-                <a onclick="switchPage('gallery')" class="btn">View Collection</a>
-            </div>
-            <div class="hero-visual" style="background-image: url('images/hero.jpg');"></div>
-        </div>
+        <h1>Welcome to the Royal Academy</h1>
     </section>
 
     <!-- ABOUT -->
     <section id="about">
-        <div class="container">
-            <h2 class="section-title">Background History</h2>
-            <div class="about-grid">
-                <div class="about-text">
-                    <p class="lead-text">
-                        The Aesthetics curriculum in the Bhutan Baccalaureate nurtures an appreciation of interconnectedness and nature.
-                    </p>
-                    <p class="muted-text">
-                        The curriculum uses interdisciplinary learning, project-based activities, community engagement, and cultural exploration.
-                    </p>
-
-                    <p class="muted-text" style="margin-top: 15px;">
-                        <strong>Our Mission:</strong> To nurture an aesthetic mindset that appreciates nature and interconnectedness.
-                    </p>
-
-                    <div class="signature-box">
-                        <div class="stat">
-                            <h3>150+</h3>
-                            <p>Products</p>
-                        </div>
-                        <div class="stat">
-                            <h3>3 Years+</h3>
-                            <p>Experience</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="about-img" style="background-image: url('images/dzong 2.jpeg');"></div>
-            </div>
-        </div>
+        <h2>Background History</h2>
+        <p>The Aesthetics curriculum in the Bhutan Baccalaureate…</p>
     </section>
 
     <!-- ABOUT ME -->
     <section id="aboutme">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-grid">
-                <div class="about-img" style="background-image: url('images/img.jpeg'); order: 2;"></div>
-
-                <div class="about-text" style="order: 1;">
-                    <p class="lead-text">
-                        "Strength grows in the moments when you refuse to give up."
-                    </p>
-                    <p class="muted-text">
-                        My name is <strong>Dorji Dradull</strong>. I am from Bhutan and I enjoy sculpting.
-                    </p>
-                    <p class="muted-text" style="margin-top: 15px;">
-                        Practice simple shapes to train your hands and improve your sculpting technique.
-                    </p>
-
-                    <div class="signature-box">
-                        <div class="stat">
-                            <h3>10+</h3>
-                            <p>Group Works</p>
-                        </div>
-                        <div class="stat">
-                            <h3>Bhutanese</h3>
-                            <p>Energetic Learner</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <h2>About Me</h2>
+        <p>My name is Dorji Dradull…</p>
     </section>
 
     <!-- GALLERY -->
     <section id="gallery">
-        <div class="container">
-            <h2 class="section-title">Work done by students</h2>
+        <h2>Work done by students</h2>
 
-            <div class="gallery-grid">
-                <div class="gallery-card">
-                    <img src="img1.jpg">
-                    <div class="gallery-overlay">
-                        <h3>Traditional bell with Khorlo</h3>
-                        <p>Dorji Dradull and Rigden Nima</p>
-                    </div>
-                </div>
+        <div class="gallery-grid">
 
-                <div class="gallery-card">
-                    <img src="img2.jpg">
-                    <div class="gallery-overlay">
-                        <h3>Elephant with jewel</h3>
-                        <p>Tency Dorji and Thukten Dorji</p>
-                    </div>
-                </div>
-
-                <div class="gallery-card">
-                    <img src="img3.jpg">
-                    <div class="gallery-overlay">
-                        <h3>Buddha Shakyamuni</h3>
-                        <p>Rigden Nima</p>
-                    </div>
-                </div>
-
-                <div class="gallery-card">
-                    <img src="img4.jpg">
-                    <div class="gallery-overlay">
-                        <h3>Sculpted conch</h3>
-                        <p>Chhimi Dorji</p>
-                    </div>
-                </div>
-
-                <div class="gallery-card">
-                    <img src="img5.jpg">
-                    <div class="gallery-overlay">
-                        <h3>Traditional wooden bowl</h3>
-                        <p>Dorji Dradull</p>
-                    </div>
-                </div>
-
-                <div class="gallery-card">
-                    <img src="img7.jpg">
-                    <div class="gallery-overlay">
-                        <h3>Elephant and laughing Buddha</h3>
-                        <p>Chhimi Dorji and Palden Gadhen Nima</p>
-                    </div>
+            <div class="gallery-card">
+                <img src="img1.jpg">
+                <div class="gallery-overlay">
+                    <h3>Traditional Bell</h3>
+                    <p>Dorji Dradull & Rigden Nima</p>
                 </div>
             </div>
+
+            <div class="gallery-card">
+                <img src="img2.jpg">
+                <div class="gallery-overlay">
+                    <h3>Elephant with Jewel</h3>
+                    <p>Tency Dorji & Thukten Dorji</p>
+                </div>
+            </div>
+
+            <div class="gallery-card">
+                <img src="img3.jpg">
+                <div class="gallery-overlay">
+                    <h3>Buddha Shakyamuni</h3>
+                    <p>Rigden Nima</p>
+                </div>
+            </div>
+
+            <div class="gallery-card">
+                <img src="img4.jpg">
+                <div class="gallery-overlay">
+                    <h3>Sculpted Conch</h3>
+                    <p>Chhimi Dorji</p>
+                </div>
+            </div>
+
+            <div class="gallery-card">
+                <img src="img5.jpg">
+                <div class="gallery-overlay">
+                    <h3>Wooden Bowl</h3>
+                    <p>Dorji Dradull</p>
+                </div>
+            </div>
+
+            <div class="gallery-card">
+                <img src="img7.jpg">
+                <div class="gallery-overlay">
+                    <h3>Laughing Buddha</h3>
+                    <p>Chhimi Dorji & Palden Gadhen</p>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -251,7 +101,6 @@
         <p>&copy; 2025 Royal Academy of Sculpture. All Rights Reserved.</p>
     </footer>
 
-    <!-- SCRIPT -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             switchPage('home');
@@ -259,16 +108,15 @@
 
         function switchPage(pageId) {
             const sections = document.querySelectorAll('section');
-            sections.forEach(section => section.classList.remove('active-section'));
+            sections.forEach(s => s.classList.remove('active-section'));
 
-            const targetSection = document.getElementById(pageId);
-            if (targetSection) targetSection.classList.add('active-section');
+            document.getElementById(pageId).classList.add('active-section');
 
             const navLinks = document.querySelectorAll('.nav-menu a');
-            navLinks.forEach(link => link.classList.remove('active-link'));
+            navLinks.forEach(l => l.classList.remove('active-link'));
 
-            const activeLink = document.getElementById('link-' + pageId);
-            if (activeLink) activeLink.classList.add('active-link');
+            const active = document.getElementById('link-' + pageId);
+            if (active) active.classList.add('active-link');
 
             window.scrollTo(0, 0);
         }
