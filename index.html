@@ -4,85 +4,77 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Royal Academy | Contemporary Sculpture</title>
+
     <link rel="stylesheet" href="style.css">
 
     <style>
-        /* --- IMPORTANT: This makes the navigation work --- */
-        
-        /* 1. Hide all sections by default */
-        section {
-            display: none;
-            padding-top: 20px;
-        }
-
-        /* 2. Only show the active section */
-        section.active-section {
-            display: block;
-            animation: fadeIn 0.5s;
-        }
-
-        /* Simple fade animation */
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        /* ========================== */
-        /*     NEW NAVIGATION BAR     */
-        /* ========================== */
+        /* ==================================== */
+        /*          FIXED BLACK NAV BAR          */
+        /* ==================================== */
 
         .nav {
-            background: #000; /* Black */
-            color: white;
-            display: flex;
-            justify-content: space-between; /* Brand left, menu right */
-            align-items: center;
-            padding: 15px 30px;
-            position: fixed; /* Stay at top */
+            background: #000 !important;   /* Black bar */
+            color: #fff !important;
+            display: flex !important;
+            justify-content: space-between !important; /* Brand left, menu right */
+            align-items: center !important;
+            padding: 15px 30px !important;
+            position: fixed !important;   /* Stay at top */
             top: 0;
             left: 0;
-            width: 100%;
-            z-index: 1000;
+            width: 100% !important;
+            z-index: 1000 !important;
         }
 
         .nav-brand h2 {
-            color: white;
+            color: #fff !important;
             margin: 0;
         }
 
         .nav-menu {
             list-style: none;
             display: flex;
-            gap: 20px;
+            gap: 25px;
             margin: 0;
             padding: 0;
         }
 
         .nav-menu a {
+            color: white !important;
             text-decoration: none;
-            color: white;
             font-weight: 500;
             cursor: pointer;
         }
 
-        /* Highlight active page link */
         .nav-menu a.active-link {
             font-weight: bold;
             border-bottom: 2px solid white;
         }
 
-        /* Prevent navbar from covering content */
+        /* Prevent navbar from hiding content */
         body {
             margin: 0;
-            padding-top: 90px; /* Space for fixed navbar */
+            padding-top: 90px !important;
             font-family: sans-serif;
         }
 
-        /* --- Basic Styling (Optional but helpful) --- */
-        .gallery-grid { display: flex; flex-wrap: wrap; gap: 20px; }
-        .gallery-card { border: 1px solid #ccc; padding: 10px; width: 300px; }
-        img { max-width: 100%; }
+        /* ==================================== */
+        /*          PAGE SWITCHING LOGIC         */
+        /* ==================================== */
 
+        section {
+            display: none;
+        }
+
+        section.active-section {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
     </style>
 </head>
 
@@ -187,6 +179,7 @@
         <div class="container">
             <h2 class="section-title">Work done by students</h2>
             <div class="gallery-grid">
+
                 <div class="gallery-card">
                     <img src="img1.jpg" alt="Traditional bell">
                     <div class="gallery-overlay">
@@ -234,6 +227,7 @@
                         <p>Chhimi Dorji and Palden Gadhen Nima</p>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
@@ -248,17 +242,15 @@
         });
 
         function switchPage(pageId) {
-            const sections = document.querySelectorAll('section');
-            sections.forEach(section => section.classList.remove('active-section'));
+            document.querySelectorAll('section')
+                .forEach(s => s.classList.remove('active-section'));
 
-            const targetSection = document.getElementById(pageId);
-            if (targetSection) targetSection.classList.add('active-section');
+            document.getElementById(pageId).classList.add('active-section');
 
-            const navLinks = document.querySelectorAll('.nav-menu a');
-            navLinks.forEach(link => link.classList.remove('active-link'));
+            document.querySelectorAll('.nav-menu a')
+                .forEach(a => a.classList.remove('active-link'));
 
-            const activeLink = document.getElementById('link-' + pageId);
-            if (activeLink) activeLink.classList.add('active-link');
+            document.getElementById('link-' + pageId).classList.add('active-link');
 
             window.scrollTo(0, 0);
         }
