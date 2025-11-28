@@ -1,57 +1,76 @@
 /* ===================== */
-/*    NAVIGATION FIXED   */
+/*     NAVIGATION BAR    */
 /* ===================== */
 .nav {
-    background: #000 !important;
-    color: #fff !important;
-    display: flex !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-    padding: 20px 40px !important;
-    position: fixed !important;
+    background: linear-gradient(45deg, #1a1a1a, #333); /* More dynamic gradient */
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    position: fixed;
     top: 0;
     left: 0;
-    width: 100% !important;
-    z-index: 1000 !important;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* Stronger shadow */
 }
 
 .nav-brand h2 {
-    color: #fff !important;
+    color: #fff;
     margin: 0;
+    font-size: 24px;
+    letter-spacing: 2px;
+    font-weight: 600;
 }
 
 .nav-menu {
-    list-style: none !important;
-    display: flex !important;
-    gap: 40px !important;            /* spacing between items */
-    margin: 0 !important;
-    padding: 0 !important;
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    margin: 0;
+    padding: 0;
 }
 
 .nav-menu a {
-    color: #fff !important;
-    text-decoration: none !important;
-    font-size: 18px !important;
-    padding: 6px 10px !important;
-    cursor: pointer;
-    letter-spacing: 2px;  /* added letter spacing */
-    transition: color 0.3s ease, transform 0.3s ease;
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 8px 12px;
+    letter-spacing: 1.5px;
+    position: relative;
+    transition: color 0.3s, transform 0.3s;
+}
+
+/* Hover effects with underlines */
+.nav-menu a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #ffcc00;
+    bottom: -5px;
+    left: 0;
+    transition: width 0.3s;
 }
 
 .nav-menu a:hover {
-    color: #ffcc00 !important;
-    transform: scale(1.1); /* zoom effect */
+    color: #ffcc00;
+    transform: scale(1.1);
+}
+
+.nav-menu a:hover::after {
+    width: 100%;
 }
 
 .nav-menu a.active-link {
-    font-weight: bold !important;
-    border-bottom: 2px solid white !important;
+    font-weight: bold;
+    color: #ffcc00;
 }
 
-/* Prevent content hiding under navbar */
 body {
-    padding-top: 110px !important;
-    font-family: sans-serif;
+    padding-top: 120px;
+    font-family: 'Arial', sans-serif;
 }
 
 /* ===================== */
@@ -63,40 +82,49 @@ section {
 
 section.active-section {
     display: block;
-    animation: fadeIn 0.5s;
+    animation: fadeIn 0.6s ease;
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 /* ===================== */
-/* GALLERY STYLES        */
+/*     GALLERY STYLES    */
 /* ===================== */
+
 .gallery-grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 30px !important;
-    justify-content: space-between; /* Items spaced out */
+    gap: 20px;
+    justify-content: center;
 }
 
 .gallery-card {
-    width: calc(33.33% - 20px); /* Balanced size for the cards */
-    border: 1px solid #ccc;
-    padding: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: calc(33.33% - 20px); /* Balanced card width */
+    height: 380px; /* Fixed height for consistency */
+    overflow: hidden;
+    border-radius: 8px;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .gallery-card img {
     width: 100%;
-    height: auto;
-    border-radius: 5px;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
 }
 
 .gallery-card:hover {
-    transform: scale(1.05); /* Slight zoom */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    transform: scale(1.05); /* Slight zoom effect */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+}
+
+.gallery-card:hover img {
+    opacity: 0.7; /* Slight fade of the image on hover */
 }
 
 .gallery-overlay {
@@ -108,23 +136,7 @@ section.active-section {
     color: white;
     opacity: 0;
     transition: opacity 0.3s ease;
+    z-index: 10;
 }
 
-.gallery-card:hover .gallery-overlay {
-    opacity: 1;
-}
-
-.gallery-card {
-    position: relative; /* Ensure overlay appears on top of the card */
-}
-
-/* ===================== */
-/* FOOTER STYLES         */
-/* ===================== */
-footer {
-    margin-top: 40px;
-    padding: 20px;
-    text-align: center;
-    background: #111;
-    color: #fff;
-}
+.gallery-card:hover .gallery-overlay
