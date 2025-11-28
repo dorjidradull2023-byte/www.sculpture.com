@@ -12,38 +12,80 @@
         /* 1. Hide all sections by default */
         section {
             display: none;
-            padding-top: 20px; /* Optional spacing */
+            padding-top: 20px;
         }
 
-        /* 2. Only show the section active class */
+        /* 2. Only show the active section */
         section.active-section {
             display: block;
             animation: fadeIn 0.5s;
         }
 
-        /* Optional: Makes the active link in the menu look different */
-        .nav-menu a.active-link {
-            font-weight: bold;
-            text-decoration: underline;
-            color: #007BFF; /* Change to your preferred color */
-        }
-
-        /* Simple animation for smoother switching */
+        /* Simple fade animation */
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
-        
-        /* --- Basic Styling to ensure layout works (if style.css is empty) --- */
-        body { font-family: sans-serif; margin: 0; padding: 0; }
+
+        /* ========================== */
+        /*     NEW NAVIGATION BAR     */
+        /* ========================== */
+
+        .nav {
+            background: #000; /* Black */
+            color: white;
+            display: flex;
+            justify-content: space-between; /* Brand left, menu right */
+            align-items: center;
+            padding: 15px 30px;
+            position: fixed; /* Stay at top */
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .nav-brand h2 {
+            color: white;
+            margin: 0;
+        }
+
+        .nav-menu {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        /* Highlight active page link */
+        .nav-menu a.active-link {
+            font-weight: bold;
+            border-bottom: 2px solid white;
+        }
+
+        /* Prevent navbar from covering content */
+        body {
+            margin: 0;
+            padding-top: 90px; /* Space for fixed navbar */
+            font-family: sans-serif;
+        }
+
+        /* --- Basic Styling (Optional but helpful) --- */
         .gallery-grid { display: flex; flex-wrap: wrap; gap: 20px; }
         .gallery-card { border: 1px solid #ccc; padding: 10px; width: 300px; }
         img { max-width: 100%; }
-        .nav { display: flex; justify-content: space-between; align-items: center; padding: 1rem; background: #f4f4f4; }
-        .nav-menu { list-style: none; display: flex; gap: 15px; }
-        .nav-menu a { text-decoration: none; color: #333; cursor: pointer; }
+
     </style>
 </head>
+
 <body>
 
     <header class="header">
@@ -60,6 +102,7 @@
         </div>
     </header>
 
+    <!-- HOME SECTION -->
     <section id="home" class="active-section">
         <div class="hero-layout">
             <div class="hero-content">
@@ -72,6 +115,7 @@
         </div>
     </section>
 
+    <!-- ABOUT SECTION -->
     <section id="about">
         <div class="container">
             <h2 class="section-title">Background History</h2>
@@ -105,6 +149,7 @@
         </div>
     </section>
 
+    <!-- ABOUT ME SECTION -->
     <section id="aboutme">
         <div class="container">
             <h2 class="section-title">About Me</h2>
@@ -116,12 +161,12 @@
                         "Strength grows in the moments when you refuse to give up, turning every setback into a step forward."
                     </p>
                     <p class="muted-text">
-                        My name is <strong>Dorji Dradull</strong>. I am from Bhutan, and I enjoy sculpting during my free time. It is one of my favorite hobbies that allows me to express my creativity and relax
+                        My name is <strong>Dorji Dradull</strong>. I am from Bhutan, and I enjoy sculpting during my free time. It is one of my favorite hobbies that allows me to express my creativity and relax.
                     </p>
                     <p class="muted-text" style="margin-top: 15px;">
                         Practice simple shapes to train your hands, study real objects to learn proportion, and sculpt often so your technique grows naturally. Add quick sketches in between to sharpen your eye and keep improving steadily.
                     </p>
-                   
+
                     <div class="signature-box">
                         <div class="stat">
                             <h3>10+</h3>
@@ -137,11 +182,11 @@
         </div>
     </section>
 
+    <!-- GALLERY SECTION -->
     <section id="gallery">
         <div class="container">
             <h2 class="section-title">Work done by students</h2>
             <div class="gallery-grid">
-                
                 <div class="gallery-card">
                     <img src="img1.jpg" alt="Traditional bell">
                     <div class="gallery-overlay">
@@ -149,16 +194,17 @@
                         <p>Dorji Dradull and Rigden Nima</p>
                     </div>
                 </div>
+
                 <div class="gallery-card">
                     <img src="img2.jpg" alt="Elephant with jewel">
                     <div class="gallery-overlay">
                         <h3>Elephant with jewel</h3>
-                        <p> Tency Dorji and Thukten Dorji</p>
+                        <p>Tency Dorji and Thukten Dorji</p>
                     </div>
                 </div>
 
                 <div class="gallery-card">
-                    <img src="img3.jpg" alt="Buddha Shakyamuni"  >
+                    <img src="img3.jpg" alt="Buddha Shakyamuni">
                     <div class="gallery-overlay">
                         <h3>Buddha Shakyamuni</h3>
                         <p>Rigden Nima</p>
@@ -166,7 +212,7 @@
                 </div>
 
                 <div class="gallery-card">
-                    <img src="img4.jpg" alt="Sculpted conch" >
+                    <img src="img4.jpg" alt="Sculpted conch">
                     <div class="gallery-overlay">
                         <h3>Sculpted conch</h3>
                         <p>Chhimi Dorji</p>
@@ -182,7 +228,7 @@
                 </div>
 
                 <div class="gallery-card">
-                    <img src="img7.jpg" alt="Elephant and laughing Buddha" >
+                    <img src="img7.jpg" alt="Elephant and laughing Buddha">
                     <div class="gallery-overlay">
                         <h3>Elephant and laughing Buddha</h3>
                         <p>Chhimi Dorji and Palden Gadhen Nima</p>
@@ -202,22 +248,18 @@
         });
 
         function switchPage(pageId) {
-            // 1. Hide all sections
             const sections = document.querySelectorAll('section');
             sections.forEach(section => section.classList.remove('active-section'));
 
-            // 2. Show the target section
             const targetSection = document.getElementById(pageId);
             if (targetSection) targetSection.classList.add('active-section');
 
-            // 3. Update the navigation link colors
             const navLinks = document.querySelectorAll('.nav-menu a');
             navLinks.forEach(link => link.classList.remove('active-link'));
 
             const activeLink = document.getElementById('link-' + pageId);
             if (activeLink) activeLink.classList.add('active-link');
 
-            // 4. Scroll to top
             window.scrollTo(0, 0);
         }
     </script>
