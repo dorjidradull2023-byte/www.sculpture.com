@@ -6,7 +6,6 @@
     <title>Royal Academy | Contemporary Sculpture</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
     <header class="header">
@@ -15,85 +14,96 @@
                 <h2>The Royal Academy</h2>
             </div>
             <ul class="nav-menu">
-                <li><a id="link-home" onclick="switchPage('home')">HOME</a></li>
-                <li><a id="link-about" onclick="switchPage('about')">ABOUT</a></li>
-                <li><a id="link-aboutme" onclick="switchPage('aboutme')">ABOUT ME</a></li>
-                <li><a id="link-gallery" onclick="switchPage('gallery')">GALLERY</a></li>
+                <li><a id="link-home" onclick="switchPage('home')">Home</a></li>
+                <li><a id="link-about" onclick="switchPage('about')">About</a></li>
+                <li><a id="link-aboutme" onclick="switchPage('aboutme')">About Me</a></li>
+                <li><a id="link-gallery" onclick="switchPage('gallery')">Gallery</a></li>
             </ul>
         </div>
     </header>
 
     <!-- HOME -->
     <section id="home" class="active-section">
-        <h1>Welcome to the Royal Academy</h1>
+        <div class="hero-layout">
+            <div class="hero-content">
+                <p>ELEGANCE IN FORM</p>
+                <h1>The Collection From The<br> Royal Academy</h1>
+                <p>Where traditional craftsmanship meets contemporary vision.</p>
+                <a onclick="switchPage('gallery')" class="btn">View Collection</a>
+            </div>
+        </div>
     </section>
 
     <!-- ABOUT -->
     <section id="about">
-        <h2>Background History</h2>
-        <p>The Aesthetics curriculum in the Bhutan Baccalaureate…</p>
+        <div class="container">
+            <h2 class="section-title">Background History</h2>
+            <p>The Aesthetics curriculum in the Bhutan Baccalaureate nurtures an appreciation of interconnectedness and nature.</p>
+        </div>
     </section>
 
     <!-- ABOUT ME -->
     <section id="aboutme">
-        <h2>About Me</h2>
-        <p>My name is Dorji Dradull…</p>
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <p>My name is Dorji Dradull, and I enjoy sculpting.</p>
+        </div>
     </section>
 
     <!-- GALLERY -->
     <section id="gallery">
-        <h2>Work done by students</h2>
+        <div class="container">
+            <h2 class="section-title">Work done by students</h2>
 
-        <div class="gallery-grid">
+            <div class="gallery-grid">
+                <div class="gallery-card">
+                    <img src="img1.jpg">
+                    <div class="gallery-overlay">
+                        <h3>Traditional Bell</h3>
+                        <p>Dorji Dradull & Rigden Nima</p>
+                    </div>
+                </div>
 
-            <div class="gallery-card">
-                <img src="img1.jpg">
-                <div class="gallery-overlay">
-                    <h3>Traditional Bell</h3>
-                    <p>Dorji Dradull & Rigden Nima</p>
+                <div class="gallery-card">
+                    <img src="img2.jpg">
+                    <div class="gallery-overlay">
+                        <h3>Elephant with Jewel</h3>
+                        <p>Tency Dorji & Thukten Dorji</p>
+                    </div>
+                </div>
+
+                <div class="gallery-card">
+                    <img src="img3.jpg">
+                    <div class="gallery-overlay">
+                        <h3>Buddha Shakyamuni</h3>
+                        <p>Rigden Nima</p>
+                    </div>
+                </div>
+
+                <div class="gallery-card">
+                    <img src="img4.jpg">
+                    <div class="gallery-overlay">
+                        <h3>Sculpted Conch</h3>
+                        <p>Chhimi Dorji</p>
+                    </div>
+                </div>
+
+                <div class="gallery-card">
+                    <img src="img5.jpg">
+                    <div class="gallery-overlay">
+                        <h3>Wooden Bowl</h3>
+                        <p>Dorji Dradull</p>
+                    </div>
+                </div>
+
+                <div class="gallery-card">
+                    <img src="img7.jpg">
+                    <div class="gallery-overlay">
+                        <h3>Laughing Buddha</h3>
+                        <p>Chhimi Dorji & Palden Gadhen Nima</p>
+                    </div>
                 </div>
             </div>
-
-            <div class="gallery-card">
-                <img src="img2.jpg">
-                <div class="gallery-overlay">
-                    <h3>Elephant with Jewel</h3>
-                    <p>Tency Dorji & Thukten Dorji</p>
-                </div>
-            </div>
-
-            <div class="gallery-card">
-                <img src="img3.jpg">
-                <div class="gallery-overlay">
-                    <h3>Buddha Shakyamuni</h3>
-                    <p>Rigden Nima</p>
-                </div>
-            </div>
-
-            <div class="gallery-card">
-                <img src="img4.jpg">
-                <div class="gallery-overlay">
-                    <h3>Sculpted Conch</h3>
-                    <p>Chhimi Dorji</p>
-                </div>
-            </div>
-
-            <div class="gallery-card">
-                <img src="img5.jpg">
-                <div class="gallery-overlay">
-                    <h3>Wooden Bowl</h3>
-                    <p>Dorji Dradull</p>
-                </div>
-            </div>
-
-            <div class="gallery-card">
-                <img src="img7.jpg">
-                <div class="gallery-overlay">
-                    <h3>Laughing Buddha</h3>
-                    <p>Chhimi Dorji & Palden Gadhen</p>
-                </div>
-            </div>
-
         </div>
     </section>
 
