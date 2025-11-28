@@ -1,154 +1,126 @@
 /* ===================== */
-/*     NAVIGATION BAR    */
+/*    NAVIGATION FIXED   */
 /* ===================== */
-
 .nav {
-    background: linear-gradient(90deg, #000, #333);
-    color: #fff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 50px;
-    position: fixed;
+    background: #000 !important;
+    color: #fff !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 20px 40px !important;
+    position: fixed !important;
     top: 0;
     left: 0;
-    width: 100%;
-    z-index: 1000;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    width: 100% !important;
+    z-index: 1000 !important;
 }
 
 .nav-brand h2 {
-    letter-spacing: 3px;
-    font-size: 26px;
+    color: #fff !important;
     margin: 0;
 }
 
-/* Navigation Menu */
 .nav-menu {
-    list-style: none;
-    display: flex;
-    gap: 60px;
-    margin: 0;
-    padding: 0;
+    list-style: none !important;
+    display: flex !important;
+    gap: 40px !important;            /* spacing between items */
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
 .nav-menu a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 18px;
+    color: #fff !important;
+    text-decoration: none !important;
+    font-size: 18px !important;
+    padding: 6px 10px !important;
     cursor: pointer;
-    letter-spacing: 3px;
-    position: relative;
-    transition: 0.3s ease;
-}
-
-/* underline hover animation */
-.nav-menu a::after {
-    content: "";
-    position: absolute;
-    width: 0;
-    height: 2px;
-    background: #ffcc00;
-    bottom: -4px;
-    left: 0;
-    transition: width 0.3s;
-}
-
-.nav-menu a:hover::after {
-    width: 100%;
+    letter-spacing: 2px;  /* added letter spacing */
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .nav-menu a:hover {
-    color: #ffcc00;
-    transform: scale(1.1);
+    color: #ffcc00 !important;
+    transform: scale(1.1); /* zoom effect */
 }
 
-.active-link {
-    font-weight: bold;
+.nav-menu a.active-link {
+    font-weight: bold !important;
+    border-bottom: 2px solid white !important;
 }
 
+/* Prevent content hiding under navbar */
 body {
-    padding-top: 120px;
+    padding-top: 110px !important;
     font-family: sans-serif;
 }
 
 /* ===================== */
-/*  SECTION ANIMATION    */
+/* SHOW/HIDE SECTIONS    */
 /* ===================== */
-
 section {
     display: none;
 }
 
-.active-section {
+section.active-section {
     display: block;
-    animation: fadeIn 0.6s ease;
+    animation: fadeIn 0.5s;
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to   { opacity: 1; transform: translateY(0); }
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
-
 /* ===================== */
-/*       GALLERY         */
+/* GALLERY STYLES        */
 /* ===================== */
-
 .gallery-grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 30px;
-    justify-content: center;
+    gap: 30px !important;
+    justify-content: space-between; /* Items spaced out */
 }
 
 .gallery-card {
-    width: 340px;
-    height: 420px;
-    overflow: hidden;
-    border-radius: 12px;
-    position: relative;
-    cursor: pointer;
-    border: 1px solid #ddd;
-    background: #fff;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-.gallery-card:hover {
-    transform: scale(1.06);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    width: calc(33.33% - 20px); /* Balanced size for the cards */
+    border: 1px solid #ccc;
+    padding: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .gallery-card img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: 0.4s ease;
+    height: auto;
+    border-radius: 5px;
 }
 
-.gallery-card:hover img {
-    opacity: 0.3;
+.gallery-card:hover {
+    transform: scale(1.05); /* Slight zoom */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
 }
 
 .gallery-overlay {
     position: absolute;
-    bottom: 20px;
-    left: 20px;
-    color: #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
     opacity: 0;
-    transition: 0.4s ease;
-    z-index: 10;
+    transition: opacity 0.3s ease;
 }
 
 .gallery-card:hover .gallery-overlay {
     opacity: 1;
 }
 
+.gallery-card {
+    position: relative; /* Ensure overlay appears on top of the card */
+}
 
 /* ===================== */
-/*        FOOTER         */
+/* FOOTER STYLES         */
 /* ===================== */
-
 footer {
     margin-top: 40px;
     padding: 20px;
