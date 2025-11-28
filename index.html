@@ -4,22 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Royal Academy | Contemporary Sculpture</title>
-
     <link rel="stylesheet" href="style.css">
 
     <style>
-        /* ==================================== */
-        /*          FIXED BLACK NAV BAR          */
-        /* ==================================== */
-
+        /* ===================== */
+        /*    NAVIGATION FIXED   */
+        /* ===================== */
         .nav {
-            background: #000 !important;   /* Black bar */
+            background: #000 !important;
             color: #fff !important;
             display: flex !important;
-            justify-content: space-between !important; /* Brand left, menu right */
+            justify-content: space-between !important;
             align-items: center !important;
-            padding: 15px 30px !important;
-            position: fixed !important;   /* Stay at top */
+            padding: 20px 40px !important;
+            position: fixed !important;
             top: 0;
             left: 0;
             width: 100% !important;
@@ -31,53 +29,71 @@
             margin: 0;
         }
 
+        /* Navigation menu spacing */
         .nav-menu {
-            list-style: none;
-            display: flex;
-            gap: 25px;
-            margin: 0;
-            padding: 0;
+            list-style: none !important;
+            display: flex !important;
+            gap: 40px !important;            /* spacing between items */
+            margin: 0 !important;
+            padding: 0 !important;
         }
 
         .nav-menu a {
-            color: white !important;
-            text-decoration: none;
-            font-weight: 500;
+            color: #fff !important;
+            text-decoration: none !important;
+            font-size: 18px !important;
+            padding: 6px 10px !important;
             cursor: pointer;
         }
 
-        .nav-menu a.active-link {
-            font-weight: bold;
-            border-bottom: 2px solid white;
+        .nav-menu a:hover {
+            color: #ffcc00 !important;
         }
 
-        /* Prevent navbar from hiding content */
+        .nav-menu a.active-link {
+            font-weight: bold !important;
+            border-bottom: 2px solid white !important;
+        }
+
+        /* Prevent content hiding under navbar */
         body {
-            margin: 0;
-            padding-top: 90px !important;
+            padding-top: 110px !important;
             font-family: sans-serif;
         }
 
-        /* ==================================== */
-        /*          PAGE SWITCHING LOGIC         */
-        /* ==================================== */
-
+        /* =================================== */
+        /* SHOW/HIDE SECTIONS (NAV BEHAVIOR)   */
+        /* =================================== */
         section {
             display: none;
         }
 
         section.active-section {
             display: block;
-            animation: fadeIn 0.5s ease;
+            animation: fadeIn 0.5s;
         }
 
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
-    </style>
-</head>
 
+        /* Fix gallery spacing */
+        .gallery-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px !important;
+        }
+
+        .gallery-card {
+            width: 300px;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+
+    </style>
+
+</head>
 <body>
 
     <header class="header">
@@ -86,42 +102,42 @@
                 <h2>The Royal Academy</h2>
             </div>
             <ul class="nav-menu">
-                <li><a href="#" id="link-home" onclick="switchPage('home')">Home</a></li>
-                <li><a href="#" id="link-about" onclick="switchPage('about')">About</a></li>
-                <li><a href="#" id="link-aboutme" onclick="switchPage('aboutme')">About Me</a></li>
-                <li><a href="#" id="link-gallery" onclick="switchPage('gallery')">Gallery</a></li>
+                <li><a id="link-home" onclick="switchPage('home')">Home</a></li>
+                <li><a id="link-about" onclick="switchPage('about')">About</a></li>
+                <li><a id="link-aboutme" onclick="switchPage('aboutme')">About Me</a></li>
+                <li><a id="link-gallery" onclick="switchPage('gallery')">Gallery</a></li>
             </ul>
         </div>
     </header>
 
-    <!-- HOME SECTION -->
+    <!-- HOME -->
     <section id="home" class="active-section">
         <div class="hero-layout">
             <div class="hero-content">
                 <p>ELEGANCE IN FORM</p>
                 <h1>The Collection From The<br> Royal Academy</h1>
                 <p>Where traditional craftsmanship meets contemporary vision. Explore our collection of Sculpture done by the student of the Royal Academy.</p>
-                <a href="#" onclick="switchPage('gallery')" class="btn">View Collection</a>
+                <a onclick="switchPage('gallery')" class="btn">View Collection</a>
             </div>
             <div class="hero-visual" style="background-image: url('images/hero.jpg');"></div>
         </div>
     </section>
 
-    <!-- ABOUT SECTION -->
+    <!-- ABOUT -->
     <section id="about">
         <div class="container">
             <h2 class="section-title">Background History</h2>
             <div class="about-grid">
                 <div class="about-text">
-                    <p class="lead-text" style="border-color: #555; color: #333;">
-                        The Aesthetics curriculum in the Bhutan Baccalaureate nurtures an appreciation of interconnectedness and nature. It builds an aesthetic mindset through diverse art forms to support a just and harmonious society.
+                    <p class="lead-text">
+                        The Aesthetics curriculum in the Bhutan Baccalaureate nurtures an appreciation of interconnectedness and nature.
                     </p>
                     <p class="muted-text">
-                        The Aesthetics curriculum in the Bhutan Baccalaureate uses interdisciplinary learning, project-based activities, community engagement, and cultural exploration for experiential and reflective education.
+                        The curriculum uses interdisciplinary learning, project-based activities, community engagement, and cultural exploration.
                     </p>
 
                     <p class="muted-text" style="margin-top: 15px;">
-                        <strong>Our Mission:</strong> To nurture an aesthetic mindset that fosters appreciation of nature and interconnectedness, inspiring learners to help build a just and harmonious society.
+                        <strong>Our Mission:</strong> To nurture an aesthetic mindset that appreciates nature and interconnectedness.
                     </p>
 
                     <div class="signature-box">
@@ -141,28 +157,28 @@
         </div>
     </section>
 
-    <!-- ABOUT ME SECTION -->
+    <!-- ABOUT ME -->
     <section id="aboutme">
         <div class="container">
             <h2 class="section-title">About Me</h2>
             <div class="about-grid">
                 <div class="about-img" style="background-image: url('images/img.jpeg'); order: 2;"></div>
-               
+
                 <div class="about-text" style="order: 1;">
                     <p class="lead-text">
-                        "Strength grows in the moments when you refuse to give up, turning every setback into a step forward."
+                        "Strength grows in the moments when you refuse to give up."
                     </p>
                     <p class="muted-text">
-                        My name is <strong>Dorji Dradull</strong>. I am from Bhutan, and I enjoy sculpting during my free time. It is one of my favorite hobbies that allows me to express my creativity and relax.
+                        My name is <strong>Dorji Dradull</strong>. I am from Bhutan and I enjoy sculpting.
                     </p>
                     <p class="muted-text" style="margin-top: 15px;">
-                        Practice simple shapes to train your hands, study real objects to learn proportion, and sculpt often so your technique grows naturally. Add quick sketches in between to sharpen your eye and keep improving steadily.
+                        Practice simple shapes to train your hands and improve your sculpting technique.
                     </p>
 
                     <div class="signature-box">
                         <div class="stat">
                             <h3>10+</h3>
-                            <p>Groups Works</p>
+                            <p>Group Works</p>
                         </div>
                         <div class="stat">
                             <h3>Bhutanese</h3>
@@ -174,14 +190,14 @@
         </div>
     </section>
 
-    <!-- GALLERY SECTION -->
+    <!-- GALLERY -->
     <section id="gallery">
         <div class="container">
             <h2 class="section-title">Work done by students</h2>
-            <div class="gallery-grid">
 
+            <div class="gallery-grid">
                 <div class="gallery-card">
-                    <img src="img1.jpg" alt="Traditional bell">
+                    <img src="img1.jpg">
                     <div class="gallery-overlay">
                         <h3>Traditional bell with Khorlo</h3>
                         <p>Dorji Dradull and Rigden Nima</p>
@@ -189,7 +205,7 @@
                 </div>
 
                 <div class="gallery-card">
-                    <img src="img2.jpg" alt="Elephant with jewel">
+                    <img src="img2.jpg">
                     <div class="gallery-overlay">
                         <h3>Elephant with jewel</h3>
                         <p>Tency Dorji and Thukten Dorji</p>
@@ -197,7 +213,7 @@
                 </div>
 
                 <div class="gallery-card">
-                    <img src="img3.jpg" alt="Buddha Shakyamuni">
+                    <img src="img3.jpg">
                     <div class="gallery-overlay">
                         <h3>Buddha Shakyamuni</h3>
                         <p>Rigden Nima</p>
@@ -205,7 +221,7 @@
                 </div>
 
                 <div class="gallery-card">
-                    <img src="img4.jpg" alt="Sculpted conch">
+                    <img src="img4.jpg">
                     <div class="gallery-overlay">
                         <h3>Sculpted conch</h3>
                         <p>Chhimi Dorji</p>
@@ -213,7 +229,7 @@
                 </div>
 
                 <div class="gallery-card">
-                    <img src="img5.jpg" alt="Traditional wooden bowl">
+                    <img src="img5.jpg">
                     <div class="gallery-overlay">
                         <h3>Traditional wooden bowl</h3>
                         <p>Dorji Dradull</p>
@@ -221,13 +237,12 @@
                 </div>
 
                 <div class="gallery-card">
-                    <img src="img7.jpg" alt="Elephant and laughing Buddha">
+                    <img src="img7.jpg">
                     <div class="gallery-overlay">
                         <h3>Elephant and laughing Buddha</h3>
                         <p>Chhimi Dorji and Palden Gadhen Nima</p>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
@@ -236,21 +251,24 @@
         <p>&copy; 2025 Royal Academy of Sculpture. All Rights Reserved.</p>
     </footer>
 
+    <!-- SCRIPT -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             switchPage('home');
         });
 
         function switchPage(pageId) {
-            document.querySelectorAll('section')
-                .forEach(s => s.classList.remove('active-section'));
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => section.classList.remove('active-section'));
 
-            document.getElementById(pageId).classList.add('active-section');
+            const targetSection = document.getElementById(pageId);
+            if (targetSection) targetSection.classList.add('active-section');
 
-            document.querySelectorAll('.nav-menu a')
-                .forEach(a => a.classList.remove('active-link'));
+            const navLinks = document.querySelectorAll('.nav-menu a');
+            navLinks.forEach(link => link.classList.remove('active-link'));
 
-            document.getElementById('link-' + pageId).classList.add('active-link');
+            const activeLink = document.getElementById('link-' + pageId);
+            if (activeLink) activeLink.classList.add('active-link');
 
             window.scrollTo(0, 0);
         }
